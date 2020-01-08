@@ -1,4 +1,10 @@
 <hello name="{{ name }}"></hello>
+<textarea [(ngModel)]="rapidPageValue"></textarea><br/>
+<button (click)="formatIt()">Format</button>
+
+<div *ngIf="showIt">
+  <pre [innerHTML]="myInput | prettyprint"></pre>
+</div>
 
 <h2>pretty-print:</h2>
 <pre [innerHTML]="obj | prettyprint"></pre>

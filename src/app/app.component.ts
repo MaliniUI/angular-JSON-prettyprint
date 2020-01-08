@@ -7,11 +7,19 @@ import { Component } from '@angular/core';
 })
 export class AppComponent  {
   name = 'Angular';
-
   myInput;
+  showIt = false;
 
-  obj = {
-    test: 'testttt',
-    name: 'nameeee'
+   get rapidPageValue () {
+    return JSON.stringify(this.myInput, null, 2);
   }
+
+  set rapidPageValue (v) {
+    try{
+    this.myInput = JSON.parse(v);}
+    catch(e) {
+      console.log('error occored while you were typing the JSON');
+    };
+  }
+  obj = [{"test": "testttt","name": "nameeee"}];
 }
